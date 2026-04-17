@@ -80,27 +80,26 @@
   .content { max-width: 520px; margin: 0 auto; padding: 10px 16px 52px; }
 
   /* ── Stats ── */
-  .stats { display: flex; gap: 10px; margin-bottom: 24px; }
+  .stats { display: flex; gap: 10px; margin-top: 20px; }
   .stat {
     flex: 1;
-    background: var(--white);
-    border: 0.5px solid var(--border);
-    border-radius: 16px;
-    padding: 14px 8px;
+    background: rgba(255,255,255,0.12);
+    border: 0.5px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 12px 8px;
     text-align: center;
-    box-shadow: 0 1px 6px rgba(27,79,138,0.07);
   }
   .stat-num {
     font-family: 'Baskerville', 'Libre Baskerville', 'Georgia', serif;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 600;
-    color: var(--blue-mid);
+    color: var(--white);
     line-height: 1;
   }
   .stat-lbl {
     font-size: 9px;
     font-weight: 500;
-    color: var(--muted);
+    color: rgba(255,255,255,0.6);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-top: 4px;
@@ -358,18 +357,21 @@
   .vline { width: 1.5px; height: 16px; background: var(--border-md); margin-left: 22px; }
   .transport-pill {
     display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    flex-direction: column;
+    gap: 2px;
     font-size: 11px;
     font-weight: 300;
     color: var(--muted);
     border: 0.5px solid var(--border-md);
-    border-radius: 20px;
-    padding: 5px 14px;
+    border-radius: 12px;
+    padding: 6px 14px;
     background: var(--white);
     margin-left: 10px;
     letter-spacing: 0.02em;
+    line-height: 1.4;
   }
+  .transport-pill .t-route { font-weight: 400; color: var(--text); }
+  .transport-pill .t-detail { font-size: 10px; color: var(--muted); }
   .stop-card + .vline { margin-top: 0; }
 
   /* ── Checklist ── */
@@ -418,21 +420,20 @@
   <div class="hero-waves"></div>
   <div class="hero-inner">
     <h1><em>Greece</em> Trip 🇬🇷</h1>
-    <p class="hero-sub">June 4 – 10, 2026 &nbsp;·&nbsp; Athens · Mykonos · Paros</p>
+    <p class="hero-sub">June 4 – 10, 2026<br>Athens · Mykonos · Paros</p>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">Nights</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Islands</div></div>
+      <div class="stat"><div class="stat-num">11</div><div class="stat-lbl">People</div></div>
+    </div>
   </div>
 </div>
 
 <div class="content">
 
-  <div class="stats">
-    <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">Nights</div></div>
-    <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Islands</div></div>
-    <div class="stat"><div class="stat-num">11</div><div class="stat-lbl">People</div></div>
-  </div>
-
   <p class="section-label">Itinerary</p>
 
-  <div class="transport-pill">✈️ EK210 · EWR → ATH · Jun 3, 11:55pm – Jun 4, 4:05pm · Emirates</div>
+  <div class="transport-pill"><span class="t-route">✈️ EK210 &nbsp;·&nbsp; EWR → ATH &nbsp;·&nbsp; Emirates</span><span class="t-detail">Jun 3, 11:55pm – Jun 4, 4:05pm</span></div>
   <div class="vline"></div>
 
   <!-- Athens 1 -->
@@ -532,7 +533,7 @@
   </div>
 
   <div class="vline"></div>
-  <div class="transport-pill">⛴ Seajets Tera Jet · Rafina → Mykonos · Jun 5, 16:50 – 18:30 · 1h 40m</div>
+  <div class="transport-pill"><span class="t-route">⛴ Seajets Tera Jet &nbsp;·&nbsp; Rafina → Mykonos</span><span class="t-detail">Jun 5, 16:50 – 18:30 &nbsp;·&nbsp; 1h 40m</span></div>
   <div class="vline"></div>
 
   <!-- Mykonos -->
@@ -581,7 +582,7 @@
   </div>
 
   <div class="vline"></div>
-  <div class="transport-pill">⛴ Seajets Superrunner · Mykonos → Paros · Jun 7, 17:10 – 17:55 · 45m</div>
+  <div class="transport-pill"><span class="t-route">⛴ Seajets Superrunner &nbsp;·&nbsp; Mykonos → Paros</span><span class="t-detail">Jun 7, 17:10 – 17:55 &nbsp;·&nbsp; 45m</span></div>
   <div class="vline"></div>
 
   <!-- Paros -->
@@ -602,10 +603,7 @@
         <div class="accom-row">
           <span class="accom-icon">🏊</span>
           <span class="accom-text"><strong>Pool villa</strong> · Airbnb</span>
-          <a class="airbnb-btn" href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            Check it out
-          </a>
+          <span style="margin-left:auto;font-size:10px;font-style:italic;color:var(--faint);">Coming soon</span>
         </div>
         <div class="day-section">
           <div class="maps-links"><span class="maps-links-label">Google Maps:</span>
@@ -690,7 +688,7 @@
   </div>
 
   <div class="vline"></div>
-  <div class="transport-pill">⛴ Seajets Tera Jet 2 · Paros → Rafina · Jun 9, 13:15 – 16:40 · 3h 25m</div>
+  <div class="transport-pill"><span class="t-route">⛴ Seajets Tera Jet 2 &nbsp;·&nbsp; Paros → Rafina</span><span class="t-detail">Jun 9, 13:15 – 16:40 &nbsp;·&nbsp; 3h 25m</span></div>
   <div class="vline"></div>
 
   <!-- Athens 2 -->
@@ -711,10 +709,7 @@
         <div class="accom-row">
           <span class="accom-icon">🏙</span>
           <span class="accom-text"><strong>Apartment</strong> · Airbnb</span>
-          <a class="airbnb-btn" href="#" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            Check it out
-          </a>
+          <span style="margin-left:auto;font-size:10px;font-style:italic;color:var(--faint);">Coming soon</span>
         </div>
         <div class="day-section">
           <div class="maps-links"><span class="maps-links-label">Google Maps:</span>
@@ -760,7 +755,7 @@
   </div>
 
   <div class="vline"></div>
-  <div class="transport-pill">✈️ EK209 · ATH → EWR · Jun 10, 5:35pm – 9:20pm · Emirates</div>
+  <div class="transport-pill"><span class="t-route">✈️ EK209 &nbsp;·&nbsp; ATH → EWR &nbsp;·&nbsp; Emirates</span><span class="t-detail">Jun 10, 5:35pm – 9:20pm</span></div>
 
   <!-- Checklist -->
   <div class="checklist">
