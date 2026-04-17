@@ -34,7 +34,7 @@
   /* ── Hero ── */
   .hero {
     background: var(--blue-deep);
-    padding: 52px 24px 52px;
+    padding: 20px 24px 52px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -179,6 +179,7 @@
   }
   .loc-badge {
     display: inline-flex;
+    align-self: flex-start;
     font-size: 9px;
     font-weight: 500;
     letter-spacing: 0.04em;
@@ -229,17 +230,25 @@
   .accom-icon { font-size: 14px; }
   .accom-text { font-size: 12px; color: var(--muted); }
   .accom-text strong { color: var(--text); font-weight: 500; }
-  .booked-pill {
+  .airbnb-btn {
     margin-left: auto;
-    font-size: 9px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
     font-weight: 500;
-    background: var(--green-bg);
-    color: var(--green-text);
-    padding: 2px 8px;
+    color: var(--blue-mid);
+    background: var(--blue-light);
+    border: 0.5px solid var(--border-md);
     border-radius: 20px;
+    padding: 5px 11px;
+    text-decoration: none;
+    white-space: nowrap;
     flex-shrink: 0;
-    letter-spacing: 0.02em;
+    transition: background 0.15s, color 0.15s;
   }
+  .airbnb-btn:hover { background: #DBEAFE; color: var(--blue-deep); }
+  .airbnb-btn svg { width: 12px; height: 12px; flex-shrink: 0; }
 
   /* ── Day section ── */
   .day-section { padding: 4px 0 0; }
@@ -375,7 +384,7 @@
   <div class="hero-inner">
     <span class="hero-flag">🇬🇷</span>
     <h1><em>Greece</em> Trip</h1>
-    <p class="hero-sub">June 4 – 10, 2025 &nbsp;·&nbsp; Athens · Mykonos · Paros</p>
+    <p class="hero-sub">June 4 – 10, 2026 &nbsp;·&nbsp; Athens · Mykonos · Paros</p>
   </div>
 </div>
 
@@ -389,6 +398,9 @@
 
   <p class="section-label">Itinerary</p>
 
+  <div class="transport-pill">✈️ EK210 · EWR → ATH · Jun 3, 11:55pm – Jun 4, 4:05pm · Emirates</div>
+  <div class="vline"></div>
+
   <!-- Athens 1 -->
   <div class="stop-card" id="stop-athens1">
     <div class="stop-header" onclick="toggle('stop-athens1')">
@@ -396,7 +408,6 @@
       <div class="stop-header-mid">
         <div class="stop-dest">Athens</div>
         <div class="stop-dates">June 4 – 5</div>
-        <span class="loc-badge b-athens">Arriving by flight · 5pm</span>
       </div>
       <div class="stop-header-right">
         <div class="nights-bubble"><span class="nights-num">1</span><span class="nights-lbl">night</span></div>
@@ -408,7 +419,10 @@
         <div class="accom-row">
           <span class="accom-icon">🏠</span>
           <span class="accom-text"><strong>Townhouse</strong> · Airbnb</span>
-          <span class="booked-pill">Booked ✓</span>
+          <a class="airbnb-btn" href="https://www.airbnb.com/l/od3U6Gc3" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Check it out
+          </a>
         </div>
         <div class="day-section">
           <div class="day-label">Evening of June 4 — depart Mykonos ferry ~2pm June 5</div>
@@ -459,7 +473,7 @@
   </div>
 
   <div class="vline"></div>
-  <div class="transport-pill">⛴ Ferry to Mykonos · June 5, ~2pm</div>
+  <div class="transport-pill">⛴ Seajets Tera Jet · Rafina → Mykonos · Jun 5, 16:50 – 18:30 · 1h 40m</div>
   <div class="vline"></div>
 
   <!-- Mykonos -->
@@ -469,7 +483,6 @@
       <div class="stop-header-mid">
         <div class="stop-dest">Mykonos</div>
         <div class="stop-dates">June 5 – 7</div>
-        <span class="loc-badge b-mykonos">Island stay</span>
       </div>
       <div class="stop-header-right">
         <div class="nights-bubble"><span class="nights-num">2</span><span class="nights-lbl">nights</span></div>
@@ -481,7 +494,10 @@
         <div class="accom-row">
           <span class="accom-icon">🌊</span>
           <span class="accom-text"><strong>Ocean villa</strong> · Airbnb</span>
-          <span class="booked-pill">Booked ✓</span>
+          <a class="airbnb-btn" href="https://www.airbnb.com/l/MoJpkd6G" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Check it out
+          </a>
         </div>
         <div class="day-section">
           <p class="coming-soon">Plan coming soon…</p>
@@ -491,7 +507,7 @@
   </div>
 
   <div class="vline"></div>
-  <div class="transport-pill">⛴ Ferry to Paros · June 7, afternoon</div>
+  <div class="transport-pill">⛴ Seajets Superrunner · Mykonos → Paros · Jun 7, 17:10 – 17:55 · 45m</div>
   <div class="vline"></div>
 
   <!-- Paros -->
@@ -501,7 +517,6 @@
       <div class="stop-header-mid">
         <div class="stop-dest">Paros</div>
         <div class="stop-dates">June 7 – 9</div>
-        <span class="loc-badge b-paros">Island stay</span>
       </div>
       <div class="stop-header-right">
         <div class="nights-bubble"><span class="nights-num">2</span><span class="nights-lbl">nights</span></div>
@@ -513,7 +528,10 @@
         <div class="accom-row">
           <span class="accom-icon">🏊</span>
           <span class="accom-text"><strong>Pool villa</strong> · Airbnb</span>
-          <span class="booked-pill">Booked ✓</span>
+          <a class="airbnb-btn" href="#" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Check it out
+          </a>
         </div>
         <div class="day-section">
           <p class="coming-soon">Plan coming soon…</p>
@@ -523,7 +541,7 @@
   </div>
 
   <div class="vline"></div>
-  <div class="transport-pill">⛴ Return to Athens · June 9, ~2pm</div>
+  <div class="transport-pill">⛴ Seajets Tera Jet 2 · Paros → Rafina · Jun 9, 13:15 – 16:40 · 3h 25m</div>
   <div class="vline"></div>
 
   <!-- Athens 2 -->
@@ -533,7 +551,6 @@
       <div class="stop-header-mid">
         <div class="stop-dest">Athens</div>
         <div class="stop-dates">June 9 – 10</div>
-        <span class="loc-badge b-athens">Final night · Flight home 5pm</span>
       </div>
       <div class="stop-header-right">
         <div class="nights-bubble"><span class="nights-num">1</span><span class="nights-lbl">night</span></div>
@@ -545,7 +562,10 @@
         <div class="accom-row">
           <span class="accom-icon">🏙</span>
           <span class="accom-text"><strong>Apartment</strong> · Airbnb</span>
-          <span class="booked-pill">Booked ✓</span>
+          <a class="airbnb-btn" href="#" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Check it out
+          </a>
         </div>
         <div class="day-section">
           <div class="day-label">Afternoon + evening — arrive ~2pm, fly home next day 5pm</div>
@@ -574,6 +594,9 @@
       </div>
     </div>
   </div>
+
+  <div class="vline"></div>
+  <div class="transport-pill">✈️ EK209 · ATH → EWR · Jun 10, 5:35pm – 9:20pm · Emirates</div>
 
   <!-- Checklist -->
   <div class="checklist">
