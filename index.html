@@ -34,7 +34,7 @@
   /* ── Hero ── */
   .hero {
     background: var(--blue-deep);
-    padding: 20px 24px 52px;
+    padding: 24px 24px 60px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -58,7 +58,6 @@
     );
   }
   .hero-inner { position: relative; z-index: 1; }
-  .hero-flag { font-size: 40px; display: block; margin-bottom: 14px; }
   .hero h1 {
     font-family: 'Baskerville', 'Libre Baskerville', 'Georgia', serif;
     font-size: 48px;
@@ -78,10 +77,10 @@
   }
 
   /* ── Content ── */
-  .content { max-width: 520px; margin: 0 auto; padding: 28px 16px 52px; }
+  .content { max-width: 520px; margin: 0 auto; padding: 10px 16px 52px; }
 
   /* ── Stats ── */
-  .stats { display: flex; gap: 10px; margin-bottom: 32px; }
+  .stats { display: flex; gap: 10px; margin-bottom: 24px; }
   .stat {
     flex: 1;
     background: var(--white);
@@ -215,7 +214,7 @@
 
   /* ── Accordion body ── */
   .stop-body { overflow: hidden; max-height: 0; transition: max-height 0.4s ease; }
-  .stop-card.open .stop-body { max-height: 3000px; }
+  .stop-card.open .stop-body { max-height: 1200px; }
   .stop-body-inner { border-top: 0.5px solid var(--border); }
 
   /* ── Accom row ── */
@@ -312,6 +311,41 @@
   .cat-nightlife { background: #FFE4E6; color: #9F1239; }
   .cat-dessert   { background: #FCE7F3; color: #9D174D; }
 
+  /* ── Maps links ── */
+  .maps-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-bottom: 0.5px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .maps-links-label {
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--faint);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .maps-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--blue-mid);
+    background: var(--blue-light);
+    border: 0.5px solid var(--border-md);
+    border-radius: 20px;
+    padding: 3px 10px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.15s;
+  }
+  .maps-link:hover { background: #DBEAFE; }
+
   .coming-soon {
     font-size: 12px;
     font-style: italic;
@@ -336,6 +370,7 @@
     margin-left: 10px;
     letter-spacing: 0.02em;
   }
+  .stop-card + .vline { margin-top: 0; }
 
   /* ── Checklist ── */
   .checklist {
@@ -382,8 +417,7 @@
 <div class="hero">
   <div class="hero-waves"></div>
   <div class="hero-inner">
-    <span class="hero-flag">🇬🇷</span>
-    <h1><em>Greece</em> Trip</h1>
+    <h1><em>Greece</em> Trip 🇬🇷</h1>
     <p class="hero-sub">June 4 – 10, 2026 &nbsp;·&nbsp; Athens · Mykonos · Paros</p>
   </div>
 </div>
@@ -425,6 +459,11 @@
           </a>
         </div>
         <div class="day-section">
+          <div class="maps-links"><span class="maps-links-label">Google Maps:</span>
+            <a href="https://maps.app.goo.gl/QZ4LLmW5shwJNby38" target="_blank" class="maps-link">🗺 Activities</a>
+            <a href="https://maps.app.goo.gl/TvMdGSfPjxzTpHm59" target="_blank" class="maps-link">🍽 Food</a>
+            <a href="https://maps.app.goo.gl/CGjAPRMceSzDQPY28" target="_blank" class="maps-link">🍹 Drinks</a>
+          </div>
           <div class="day-label">Evening of June 4 — depart Mykonos ferry ~2pm June 5</div>
 
           <div class="activity-item">
@@ -454,6 +493,26 @@
                 <span class="cat-badge cat-dessert">Dessert</span>
               </div>
               <div class="activity-desc">Athens' #1 dessert spot. Freshly fried Greek doughnuts — classic honey & cinnamon or pistachio praline. Open late.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://www.google.com/maps/place/Anafiotika,+Athens" target="_blank">Anafiotika</a>
+                <span class="cat-badge cat-explore">Explore</span>
+              </div>
+              <div class="activity-desc">Hidden neighborhood tucked under the Acropolis — Cycladic whitewashed alleys, street food, and zero tourists.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://www.google.com/maps/place/Dionysiou+Areopagitou,+Athens" target="_blank">Dionysiou Areopagitou Street</a>
+                <span class="cat-badge cat-explore">Explore</span>
+              </div>
+              <div class="activity-desc">Athens' most scenic pedestrian street running below the Acropolis — magical at night.</div>
             </div>
           </div>
 
@@ -500,7 +559,22 @@
           </a>
         </div>
         <div class="day-section">
-          <p class="coming-soon">Plan coming soon…</p>
+          <div class="maps-links"><span class="maps-links-label">Google Maps:</span>
+            <a href="https://maps.app.goo.gl/B9RFEpuvDFtLirHGA" target="_blank" class="maps-link">🗺 Activities</a>
+            <a href="https://maps.app.goo.gl/8ADzM7gV32WsczMo8" target="_blank" class="maps-link">🍽 Food</a>
+            <a href="https://maps.app.goo.gl/aWyVQkU2eBKaP1pX7" target="_blank" class="maps-link">🍹 Drinks</a>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/B9RFEpuvDFtLirHGA" target="_blank">Mykonian Spiti Cooking Class</a>
+                <span class="cat-badge cat-activity">Activity</span>
+              </div>
+              <div class="activity-desc">Hands-on Greek cooking class — fun, social, great vibes with local ingredients and recipes.</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -534,7 +608,82 @@
           </a>
         </div>
         <div class="day-section">
-          <p class="coming-soon">Plan coming soon…</p>
+          <div class="maps-links"><span class="maps-links-label">Google Maps:</span>
+            <a href="https://maps.app.goo.gl/VAaYagngPXbBdVRq5" target="_blank" class="maps-link">🗺 Activities</a>
+            <a href="https://maps.app.goo.gl/BUbwAaSy6HBnJppNA" target="_blank" class="maps-link">🍽 Food</a>
+            <a href="https://maps.app.goo.gl/ffNwYg4gdm13XzXGA" target="_blank" class="maps-link">🍹 Drinks</a>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://www.getyourguide.com/antiparos-l163280/paros-antiparos-full-day-boat-tour-with-lunch-drinks-t456735/" target="_blank">Private Boat Charter to Antiparos</a>
+                <span class="cat-badge cat-activity">Activity</span>
+              </div>
+              <div class="activity-desc">Full-day boat tour to Antiparos — sea caves, swimming in the lagoon, lunch and drinks included.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/VAaYagngPXbBdVRq5" target="_blank">Rent Quad / ATV</a>
+                <span class="cat-badge cat-activity">Activity</span>
+              </div>
+              <div class="activity-desc">Explore the whole island on quad bikes — the best way to discover hidden beaches and villages.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/VAaYagngPXbBdVRq5" target="_blank">Paros Park</a>
+                <span class="cat-badge cat-explore">Explore</span>
+              </div>
+              <div class="activity-desc">Scenic coastal park with hiking trails, a small chapel, and stunning views over the Aegean.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/VAaYagngPXbBdVRq5" target="_blank">Scuba Diving — H2O Diving Nomads</a>
+                <span class="cat-badge cat-activity">Activity</span>
+              </div>
+              <div class="activity-desc">Discover Paros' underwater world with H2O Diving Nomads — great for all experience levels.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/BUbwAaSy6HBnJppNA" target="_blank">To Takimi</a>
+                <span class="cat-badge cat-food">Food</span>
+              </div>
+              <div class="activity-desc">Live Greek music, great food, great vibes — one of the best dinner spots on the island.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/ffNwYg4gdm13XzXGA" target="_blank">Agosta</a>
+                <span class="cat-badge cat-nightlife">Nightlife</span>
+              </div>
+              <div class="activity-desc">Multi-level bar with music and drinks — the go-to spot for a big night out in Paros.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/ffNwYg4gdm13XzXGA" target="_blank">Sante Cocktail Bar</a>
+                <span class="cat-badge cat-drinks">Drinks</span>
+              </div>
+              <div class="activity-desc">Fancy cocktail bar — a more refined night out with excellent drinks.</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -568,6 +717,11 @@
           </a>
         </div>
         <div class="day-section">
+          <div class="maps-links"><span class="maps-links-label">Google Maps:</span>
+            <a href="https://maps.app.goo.gl/QZ4LLmW5shwJNby38" target="_blank" class="maps-link">🗺 Activities</a>
+            <a href="https://maps.app.goo.gl/TvMdGSfPjxzTpHm59" target="_blank" class="maps-link">🍽 Food</a>
+            <a href="https://maps.app.goo.gl/CGjAPRMceSzDQPY28" target="_blank" class="maps-link">🍹 Drinks</a>
+          </div>
           <div class="day-label">Afternoon + evening — arrive ~2pm, fly home next day 5pm</div>
 
           <div class="activity-item">
@@ -587,6 +741,16 @@
                 <span class="cat-badge cat-drinks">Drinks</span>
               </div>
               <div class="activity-desc">End the trip with rooftop cocktails and that jaw-dropping Acropolis view. The perfect last-night send-off.</div>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-content">
+              <div class="activity-name">
+                <a href="https://maps.app.goo.gl/CGjAPRMceSzDQPY28" target="_blank">Pharoah</a>
+                <span class="cat-badge cat-nightlife">Nightlife</span>
+              </div>
+              <div class="activity-desc">Small bites, DJ, wine — Michelin-recommended spot for a chic night out.</div>
             </div>
           </div>
 
