@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greece Itinerary</title>
+<style>
+  :root {
+    --bg: #f2f1ed;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6a65;
+    --faint: #9b9a95;
+    --border: rgba(0,0,0,0.11);
+    --border-md: rgba(0,0,0,0.2);
+    --success: #3B6D11;
+    --r-md: 10px;
+    --r-lg: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    padding: 20px 16px 40px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .header { padding: 8px 0 24px; }
+  .header-flag { font-size: 28px; margin-bottom: 6px; }
+  .header h1 { font-size: 24px; font-weight: 500; margin-bottom: 4px; }
+  .header p { font-size: 14px; color: var(--muted); }
+
+  .stats { display: flex; gap: 8px; margin-bottom: 24px; }
+  .stat { flex: 1; background: var(--card); border: 0.5px solid var(--border); border-radius: var(--r-md); padding: 12px; text-align: center; }
+  .stat-num { font-size: 20px; font-weight: 500; }
+  .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+  .section-label { font-size: 11px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+
+  .stop-card { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--r-lg); padding: 16px; }
+  .stop-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .stop-dest { font-size: 18px; font-weight: 500; margin-bottom: 2px; }
+  .stop-dates { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+  .badge { display: inline-flex; align-items: center; font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 500; }
+  .b-athens  { background: #E6F1FB; color: #0C447C; }
+  .b-mykonos { background: #EEEDFE; color: #3C3489; }
+  .b-paros   { background: #E1F5EE; color: #085041; }
+  .nights-bubble { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; border: 0.5px solid var(--border); background: var(--bg); flex-shrink: 0; }
+  .nights-num { font-size: 20px; font-weight: 500; line-height: 1; }
+  .nights-lbl { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .stop-divider { height: 0.5px; background: var(--border); margin: 12px 0; }
+  .accom-row { display: flex; align-items: center; gap: 8px; }
+  .accom-icon { font-size: 14px; }
+  .accom-text { font-size: 13px; color: var(--muted); }
+  .accom-text strong { color: var(--text); font-weight: 500; }
+  .booked-pill { margin-left: auto; font-size: 11px; background: #EAF3DE; color: #3B6D11; padding: 2px 8px; border-radius: 20px; font-weight: 500; flex-shrink: 0; }
+
+  .vline { width: 1px; height: 14px; background: var(--border-md); margin-left: 20px; }
+  .transport-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); border: 0.5px solid var(--border); border-radius: 20px; padding: 4px 12px; background: var(--bg); margin-left: 8px; }
+
+  .checklist { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--r-lg); padding: 16px; margin-top: 24px; }
+  .checklist-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+  .checklist-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .checklist-item:first-child { padding-top: 0; }
+  .checklist-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--success); cursor: pointer; flex-shrink: 0; margin-top: 1px; }
+  .checklist-item label { font-size: 14px; color: var(--text); cursor: pointer; flex: 1; }
+  .checklist-item .sub { font-size: 12px; color: var(--muted); display: block; margin-top: 2px; }
+
+  .footer { margin-top: 28px; text-align: center; font-size: 12px; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-flag">🇬🇷</div>
+  <h1>Greece Trip</h1>
+  <p>June 4 – 10, 2025 &nbsp;·&nbsp; Athens · Mykonos · Paros</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">Nights</div></div>
+  <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Islands</div></div>
+  <div class="stat"><div class="stat-num">11</div><div class="stat-lbl">People</div></div>
+</div>
+
+<p class="section-label">Itinerary</p>
+
+<div class="stop-card">
+  <div class="stop-top">
+    <div>
+      <p class="stop-dest">Athens</p>
+      <p class="stop-dates">June 4 · Arrival day</p>
+      <span class="badge b-athens">Arriving by flight</span>
+    </div>
+    <div class="nights-bubble"><span class="nights-num">1</span><span class="nights-lbl">night</span></div>
+  </div>
+  <div class="stop-divider"></div>
+  <div class="accom-row">
+    <span class="accom-icon">🏠</span>
+    <span class="accom-text"><strong>Townhouse</strong> · Airbnb</span>
+    <span class="booked-pill">Booked</span>
+  </div>
+</div>
+
+<div class="vline"></div>
+<div class="transport-pill">⛴ Afternoon ferry to Mykonos</div>
+<div class="vline"></div>
+
+<div class="stop-card">
+  <div class="stop-top">
+    <div>
+      <p class="stop-dest">Mykonos</p>
+      <p class="stop-dates">June 5 – 6</p>
+      <span class="badge b-mykonos">Island stay</span>
+    </div>
+    <div class="nights-bubble"><span class="nights-num">2</span><span class="nights-lbl">nights</span></div>
+  </div>
+  <div class="stop-divider"></div>
+  <div class="accom-row">
+    <span class="accom-icon">🌊</span>
+    <span class="accom-text"><strong>Ocean villa</strong> · Airbnb</span>
+    <span class="booked-pill">Booked</span>
+  </div>
+</div>
+
+<div class="vline"></div>
+<div class="transport-pill">⛴ Ferry to Paros · June 7 afternoon</div>
+<div class="vline"></div>
+
+<div class="stop-card">
+  <div class="stop-top">
+    <div>
+      <p class="stop-dest">Paros</p>
+      <p class="stop-dates">June 7 – 8</p>
+      <span class="badge b-paros">Island stay</span>
+    </div>
+    <div class="nights-bubble"><span class="nights-num">2</span><span class="nights-lbl">nights</span></div>
+  </div>
+  <div class="stop-divider"></div>
+  <div class="accom-row">
+    <span class="accom-icon">🏊</span>
+    <span class="accom-text"><strong>Pool villa</strong> · Airbnb</span>
+    <span class="booked-pill">Booked</span>
+  </div>
+</div>
+
+<div class="vline"></div>
+<div class="transport-pill">⛴ Return to Athens · June 9 morning</div>
+<div class="vline"></div>
+
+<div class="stop-card">
+  <div class="stop-top">
+    <div>
+      <p class="stop-dest">Athens</p>
+      <p class="stop-dates">June 9 – 10 · Final night</p>
+      <span class="badge b-athens">Departure day</span>
+    </div>
+    <div class="nights-bubble"><span class="nights-num">1</span><span class="nights-lbl">night</span></div>
+  </div>
+  <div class="stop-divider"></div>
+  <div class="accom-row">
+    <span class="accom-icon">🏙</span>
+    <span class="accom-text"><strong>Apartment</strong> · Airbnb</span>
+    <span class="booked-pill">Booked</span>
+  </div>
+</div>
+
+<div class="checklist">
+  <p class="section-label" style="margin-bottom: 4px;">To do</p>
+  <div class="checklist-item">
+    <input type="checkbox" id="c1">
+    <label for="c1">Book activities</label>
+  </div>
+  <div class="checklist-item">
+    <input type="checkbox" id="c2">
+    <label for="c2">Book restaurants<span class="sub">Large group of 11 — reserve ahead!</span></label>
+  </div>
+  <div class="checklist-item">
+    <input type="checkbox" id="c3">
+    <label for="c3">Book ferries</label>
+  </div>
+</div>
+
+<div class="footer">Made with ♡ for the Greece crew</div>
+
+</body>
+</html>
