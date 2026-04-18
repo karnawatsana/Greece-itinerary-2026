@@ -79,8 +79,17 @@
   /* ── Content ── */
   .content { max-width: 520px; margin: 0 auto; padding: 0 16px 52px; }
 
+  .cd-colon {
+    font-family: 'Baskerville', 'Libre Baskerville', 'Georgia', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    align-self: center;
+    margin-bottom: 14px;
+  }
+
   /* ── Stats ── */
-  .stats { display: flex; gap: 10px; margin-top: 20px; }
+  .stats { display: flex; gap: 10px; margin-top: 0; }
   .stat {
     flex: 1;
     background: rgba(255,255,255,0.12);
@@ -425,10 +434,15 @@
   <div class="hero-inner">
     <h1><em>Greece</em> Trip 🇬🇷</h1>
     <p class="hero-sub">June 4 – 10, 2026<br>Athens · Mykonos · Paros</p>
+    <p style="font-size:10px;font-weight:400;color:rgba(255,255,255,0.5);letter-spacing:0.14em;text-transform:uppercase;margin:16px 0 6px;">Countdown to departure</p>
     <div class="stats">
-      <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">Nights</div></div>
-      <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Islands</div></div>
-      <div class="stat"><div class="stat-num">11</div><div class="stat-lbl">People</div></div>
+      <div class="stat"><div class="stat-num" id="cd-days">--</div><div class="stat-lbl">Days</div></div>
+      <span class="cd-colon">:</span>
+      <div class="stat"><div class="stat-num" id="cd-hours">--</div><div class="stat-lbl">Hours</div></div>
+      <span class="cd-colon">:</span>
+      <div class="stat"><div class="stat-num" id="cd-mins">--</div><div class="stat-lbl">Minutes</div></div>
+      <span class="cd-colon">:</span>
+      <div class="stat"><div class="stat-num" id="cd-secs">--</div><div class="stat-lbl">Seconds</div></div>
     </div>
   </div>
 </div>
@@ -792,6 +806,41 @@
   function toggle(id) {
     document.getElementById(id).classList.toggle('open');
   }
+
+  function updateCountdown() {
+    // June 3 2026 11:55PM EST = UTC-5, so 04:55 UTC June 4
+    const target = new Date('2026-06-04T04:55:00Z');
+    const now = new Date();
+    const diff = target - now;
+
+    const el = {
+      days:  document.getElementById('cd-days'),
+      hours: document.getElementById('cd-hours'),
+      mins:  document.getElementById('cd-mins'),
+      secs:  document.getElementById('cd-secs'),
+    };
+
+    if (diff <= 0) {
+      el.days.textContent  = '0';
+      el.hours.textContent = '0';
+      el.mins.textContent  = '0';
+      el.secs.textContent  = '0';
+      return;
+    }
+
+    const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+    el.days.textContent  = days;
+    el.hours.textContent = hours;
+    el.mins.textContent  = mins;
+    el.secs.textContent  = secs;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 </script>
 
 </body>
